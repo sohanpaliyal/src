@@ -10,4 +10,14 @@ const postQueue = new Queue(
   }
 );
 
+
+redisConnection.on('connect', () => {
+  console.log('Redis Connected');
+});
+
+redisConnection.on('error', (err) => {
+  console.log('Redis Error:', err.message);
+});
+
+
 module.exports = postQueue;
